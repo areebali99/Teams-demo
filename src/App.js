@@ -4,6 +4,8 @@ import { Switch, BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 import Form from './Form'
 
+import TeamForm from './TeamForm'
+
 function App () {
   return (
     <>
@@ -11,6 +13,8 @@ function App () {
       <Router>
         <Switch>
           <Route exact path="/" component={Form} />
+
+          <Route exact path="/teamform" component={TeamForm} />
         </Switch>
       </Router>
 
