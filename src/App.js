@@ -1,32 +1,20 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router';
-import { Switch } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
-import Form from './Form';
-import FormSignup from './FormSignup';
+import React from 'react'
+import { Route } from 'react-router'
+import { Switch, BrowserRouter as Router } from 'react-router-dom'
+import './App.css'
+import Form from './Form'
 
-import FormSignIn from './FormSignIn';
-
-function App() {
-
-
+function App () {
   return (
     <>
 
       <Router>
         <Switch>
-          <Route exact path="/" component={FormSignIn} />
-
-          <Route exact path="/Signup" component={ Form} />
+          <Route exact path="/" component={Form} />
         </Switch>
       </Router>
-
-
-
-
 
     </>)
 }
 
-export default App;
+export default App
