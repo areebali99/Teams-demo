@@ -7,6 +7,7 @@ import Form from './Form';
 import FormSignup from './FormSignup';
 
 import FormSignIn from './FormSignIn';
+import TeamForm from './TeamForm';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={FormSignIn} />
 
           <Route exact path="/Signup" component={ Form} />
+          <Route exact path="/teamform" component={TeamForm} />
         </Switch>
       </Router>
 

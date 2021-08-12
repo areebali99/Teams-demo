@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
+import TeamForm from './TeamForm';
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
     username: '',
     email: '',
     password: '',
-    password2: ''
+    password2: '',
+    teamName:'',
+    teamDescription:''
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,14 +29,15 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
     let userData=[];
     userData=JSON.parse(localStorage.getItem('UserData'));
-   console.log('userData',userData)
+   return <TeamForm/>
+  //  console.log('userData',values)
 
-   if(userData)
-  { userData.push(userData);
-   localStorage.setItem('UserData',JSON.stringify(userData))}
-else{
-  localStorage.setItem('UserData',JSON.stringify([values]))
-}
+//    if(userData)
+//   { userData.push(userData);
+//    localStorage.setItem('UserData',JSON.stringify(userData))}
+// else{
+//   localStorage.setItem('UserData',JSON.stringify([values]))
+// }
 
   };
 

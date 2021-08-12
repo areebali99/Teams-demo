@@ -1,16 +1,23 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import validate from './validateInfo';
 import useForm from './useForm';
 import './Form.css';
 import Form from './Form';
 import {Link} from 'react-router-dom'
+import TeamForm from './TeamForm';
 
 const FormSignIn = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
-  
+
+   const [team, setTeam] = useState(true)
+  const handlePreview=()=>{
+    
+    setTeam(<TeamForm/>)
+    
+  }
 
   return (
 
@@ -20,10 +27,8 @@ const FormSignIn = ({ submitForm }) => {
       <img className='form-img' src='img/img-2.svg' alt='spaceship' />
     </div>
    
- 
-
     <div className='form-content-right'>
-      <form onSubmit={e=>handleSubmit(e)}  className='form' noValidate>
+      <form onSubmit={handleSubmit}  className='form' noValidate>
         <h1>
           Get started with us today! Sign in your account by filling out the
           information below.
@@ -74,15 +79,14 @@ const FormSignIn = ({ submitForm }) => {
         <span className='form-input-login'>
           Don't have an account? Sign up <Link to="/signup">here</Link>
         </span>
-        <span className='form-input-login'>
-          Don't have a team ? create team now click <Link to="/teamform">here</Link>
-        </span>
+        
 
-        <button className='form-input-btn' type='submit'>
-          Sign in
+        <button className='form-input-btn'  onClick={ () => window.location.href = "/teamform"} >
+        Sign in
         </button>
         
       </form>
+      
       </div>
     </div>
   );
