@@ -59,7 +59,7 @@ const FormSignIn = ({ onToggle }) => {
               Don't have an account? Sign up <Link onClick={() => { onToggle(false) }}>here</Link>
             </span>
 
-            <button className='form-input-btn' type='submit'>
+            <button className='form-input-btn' type='submit' onClick={ () => (window.location.href = '/addteamform')}>
               Sign in
             </button>
 
