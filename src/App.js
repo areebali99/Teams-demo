@@ -5,6 +5,7 @@ import './App.css'
 import Form from './Form'
 import AddTeamForm from './AddTeamForm'
 import TeamPageEmployee from './TeamPageEmployee'
+import TeamPageEmployer from './TeamPageEmployer'
 const App = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const App = () => {
 
           <Route exact path="/addteamform" component={AddTeamForm} />
           <Route exact path="/teampageemployee" component={TeamPageEmployee} />
+          <Route exact path="/teampageemployer" component={TeamPageEmployer} />
         </Switch>
       </Router>
 
